@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3500
 
 var MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://callum:Dicko941@192.168.0.69:27017/test"
@@ -17,7 +17,7 @@ MongoClient.connect(url, function(err, db) {
     //itemsDB.insertMany([{name: 'Crisps',quantity:'4'},{name: 'Bread',quantity:'1'}])
   })
 
-app.get('/', (req, res) => {
+app.get('/items/all', (req, res) => {
     itemsDB.find({name:'Crisps'}).toArray((err,result)=>{
         res.send(result)
     })
