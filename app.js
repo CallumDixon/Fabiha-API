@@ -17,7 +17,7 @@ MongoClient.connect(url, function(err, db) {
     //itemsDB.insertMany([{name: 'Crisps',quantity:'4'},{name: 'Bread',quantity:'1'}])
   })
 
-app.get('/items/all', (req, res) => {
+app.get('/all', (req, res) => {
     itemsDB.find({name:'Crisps'}).toArray((err,result)=>{
         res.send(result)
     })
