@@ -18,7 +18,7 @@ MongoClient.connect(url, function(err, db) {
   })
 
 app.get('/all', (req, res) => {
-    itemsDB.find({name:'Crisps'}).toArray((err,result)=>{
+    itemsDB.find({}).toArray((err,result)=>{
         res.send(result)
     })
 })
