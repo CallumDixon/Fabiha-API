@@ -3,11 +3,11 @@ const app = express()
 const port = 3500
 
 var MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://callum:Dicko941@192.168.0.69:27017/test"
+const url = "mongodb://callum:Dicko941@192.168.0.68:27017/fabiha"
 var itemsDB
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    itemsDB = db.db("test").collection("items")
+    itemsDB = db.db("fabiha").collection("pantry")
     /* var myobj = { name: 'i'};
     dbo.collection("customers").insertOne(myobj, function(err, res) {
     if (err) throw err
@@ -30,5 +30,5 @@ app.get('/items',function(req,res){
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${port}/all`)
 })
